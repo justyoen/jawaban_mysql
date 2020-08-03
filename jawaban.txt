@@ -45,10 +45,15 @@ insert into items values
 
 4.
 a)	select * from users;
-select id, name, email from users; // selain kolom password
+	select id, name, email from users; // selain kolom password
 b)	select * from items where price > 1000000;
-select * from items where name like '%sang%';
-c)	
+	select * from items where name like '%sang%';
+c)	select items.name, items.description, items.price, items.stock, items.category_id, categories.name as kategori
+    	-> from items, categories
+    	-> where items.category_id = categories.id;
+
+5. update items set price = '2500000'
+    -> where name like '%sumsang%';
 
 
 
