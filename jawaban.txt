@@ -1,0 +1,59 @@
+Jawaban Tugas mysql:
+1.	Membuat database myshop
+create database myshop;
+
+2.	Membuat tabel users;
+MariaDB [myshop]> create table users (
+    -> id int primary key auto_increment,
+    -> name varchar(255),
+    -> email varchar(255),
+    -> password varchar(255)
+    -> );
+
+Membuat tabel categories;
+create table categories (
+    -> id int primary key auto_increment,
+    -> name varchar(255)
+    -> );
+
+Membuat tabel categories;
+create table items (
+    -> id int primary key auto_increment,
+    -> name varchar(255),
+    -> description varchar(255),
+    -> price int,
+    -> stock int,
+    -> category_id int,
+    -> foreign key (category_id) references categories(id)
+    -> );
+
+3.	Soal 3 Memasukkan Data pada Table
+insert into users values ('', 'John Doe', 'john@doe.com', 'john123');
+insert into users values ('', 'Jane Doe', 'jane@doe.com', 'jenita123');
+
+insert into categories(name) values
+    -> ('gadget'),
+    -> ('cloth'),
+    -> ('men'),
+    -> ('women'),
+    -> ('branded');
+
+insert into items values
+    -> ('', 'Sumsang b50', 'hape keren dari merek sumsang', '4000000', '100', '1'),
+    -> ('', 'Uniklooh', 'baju keren dari brand ternama', '500000', '50', '2'),
+    -> ('', 'IMHO Watch', 'jam tangan anak yang jujur banget', '2000000', '10', '1');
+
+4.
+a)	select * from users;
+select id, name, email from users; // selain kolom password
+b)	select * from items where price > 1000000;
+select * from items where name like '%sang%';
+c)	
+
+
+
+
+
+
+
+
